@@ -6,6 +6,22 @@
  * ie: "cat" => "tac"
  */
 
+var poe = "Cool story Poe";
+
+function firstReverse(str){
+  var reversePoe = "";
+  if(typeof str !== "string"){
+    return null;
+  } else {
+    for(var i = str.length - 1; i >= 0; i--){
+      reversePoe += str[i];
+    }return reversePoe;
+  }
+}
+
+console.log(firstReverse(poe));
+
+
  /** Function: alphaOrder
  * The function will take the str parameter being passed in and
  * return the string in alphabetical order
@@ -56,7 +72,7 @@
  */
 
 module.exports = {
-    firstReverse: null,
+    firstReverse: firstReverse,
     alphaOrder: null,
     vowelCount: null,
     timeConvert: null,
