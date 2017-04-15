@@ -76,15 +76,6 @@ function vowelCount(str){
 
 console.log(vowelCount(ehrmann));
 
-  // for(var i = 0; i < vowelArr.length; i++){
-  //   for(var j = 0; j < str.length; j++){
-  //     if(str[j] === vowelArr[i]){
-  //       total++;
-  //     }
-  //   }
-  // }
-  // return total;
-
  /** Function: timeConvert
  * The function will take the str parameter representing the amount of minutes being passed in and
  * return the number of hours and minutes. Seperate the number of hours
@@ -93,6 +84,18 @@ console.log(vowelCount(ehrmann));
  * @return {string} as hours:minutes
  * ie: 68 => 1:8
  */
+
+ function timeConvert(str){
+  if(typeof str === "number"){
+    var hours = Math.floor(str/60);
+    var mins = str % 60;
+    return hours + ":" + mins;
+  } else{
+    return null;
+  }
+ }
+
+ console.log(timeConvert(456));
 
  /** Function: repeatString
  * The function will take in two parameters and repeat a given string (first argument)
@@ -122,6 +125,6 @@ module.exports = {
     firstReverse: firstReverse,
     alphaOrder: alphaOrder,
     vowelCount: vowelCount,
-    timeConvert: null,
+    timeConvert: timeConvert,
     repeatString: null
 }
