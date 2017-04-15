@@ -107,6 +107,22 @@ console.log(vowelCount(ehrmann));
  */
 
 
+function repeatString(str, num){
+  if((typeof str === "string") && (typeof num === "number")){
+    var repeatStr = "";
+    if(num >= 0){
+      for(var i = 0; i < num; i++){
+        repeatStr = repeatStr.concat(str);
+      }
+    }
+    return repeatStr;
+  } else {
+    return null;
+  }
+}
+console.log(repeatString("haha", 4));
+
+
 /**
  * Below here we see a module.exports which is set to an object with a bunch of keys.
  * The module.exports syntax is a built-in javascript keyword that
@@ -126,5 +142,5 @@ module.exports = {
     alphaOrder: alphaOrder,
     vowelCount: vowelCount,
     timeConvert: timeConvert,
-    repeatString: null
+    repeatString: repeatString
 }
