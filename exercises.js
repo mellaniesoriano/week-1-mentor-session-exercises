@@ -54,6 +54,37 @@ console.log(alphaOrder(magritte));
  * ie: "oreo" => 3
  */
 
+var ehrmann = "amid the noise and haste";
+
+function vowelCount(str){
+  var total = 0;
+  var vowelArr = ["a", "e", "i", "o", "u"];
+  if(typeof str !== "string"){//if not a string return null
+    return null;
+  } else {
+    for(var i = 0; i < vowelArr.length; i++){//iterates through variable
+      for(var j = 0; j < str.length; j++){ //splits string into indiv letters
+        //console.log(str[j]);
+        if(str[j] === vowelArr[i]){ //searches through ehrmann variable for a,e,i,o,u
+          total++; //counts the vowels
+        }
+      }
+    }
+  return total; //returns total
+  }
+}
+
+console.log(vowelCount(ehrmann));
+
+  // for(var i = 0; i < vowelArr.length; i++){
+  //   for(var j = 0; j < str.length; j++){
+  //     if(str[j] === vowelArr[i]){
+  //       total++;
+  //     }
+  //   }
+  // }
+  // return total;
+
  /** Function: timeConvert
  * The function will take the str parameter representing the amount of minutes being passed in and
  * return the number of hours and minutes. Seperate the number of hours
@@ -90,7 +121,7 @@ console.log(alphaOrder(magritte));
 module.exports = {
     firstReverse: firstReverse,
     alphaOrder: alphaOrder,
-    vowelCount: null,
+    vowelCount: vowelCount,
     timeConvert: null,
     repeatString: null
 }
