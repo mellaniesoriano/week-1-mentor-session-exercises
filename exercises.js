@@ -10,12 +10,13 @@ var poe = "Cool story Poe";
 
 function firstReverse(str){
   var reversePoe = "";
-  if(typeof str !== "string"){
-    return null;
+  if(typeof str === "string"){
+    reversePoe = str.split("");
+    reversePoe = reversePoe.reverse();
+    reversePoe = reversePoe.join("");
+    return reversePoe;
   } else {
-    for(var i = str.length - 1; i >= 0; i--){
-      reversePoe += str[i];
-    }return reversePoe;
+    return null;
   }
 }
 
