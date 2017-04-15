@@ -31,6 +31,21 @@ console.log(firstReverse(poe));
  * ie: "cake" => "acek"
  */
 
+var magritte = "This pipe is not a pipe";
+
+function alphaOrder(str){
+  if(typeof str === "string"){
+    var sortMagritte = str.split("");
+    sortMagritte.sort();
+    sortMagritte = sortMagritte.join("");
+    return sortMagritte
+  } else {
+    return null;
+  }
+}
+
+console.log(alphaOrder(magritte));
+
  /** Function: vowelCount
  * The function will take the str parameter being passed in and
  * return the number of vowels in the string
@@ -74,7 +89,7 @@ console.log(firstReverse(poe));
 
 module.exports = {
     firstReverse: firstReverse,
-    alphaOrder: null,
+    alphaOrder: alphaOrder,
     vowelCount: null,
     timeConvert: null,
     repeatString: null
