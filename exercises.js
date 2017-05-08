@@ -6,22 +6,14 @@
  * ie: "cat" => "tac"
  */
 
-var poe = "Cool story Poe";
-
-function firstReverse(str){
-  var reversePoe = "";
+var firstReverse = function(str){
   if(typeof str === "string"){
-    reversePoe = str.split("");
-    reversePoe = reversePoe.reverse();
-    reversePoe = reversePoe.join("");
-    return reversePoe;
-  } else {
+    return str.split('').reverse().join('');
+  }
+  else {
     return null;
   }
-}
-
-console.log(firstReverse(poe));
-
+};
 
  /** Function: alphaOrder
  * The function will take the str parameter being passed in and
@@ -31,20 +23,14 @@ console.log(firstReverse(poe));
  * ie: "cake" => "acek"
  */
 
-var magritte = "This pipe is not a pipe";
-
-function alphaOrder(str){
+var alphaOrder = function(str){
   if(typeof str === "string"){
-    var sortMagritte = str.split("");
-    sortMagritte.sort();
-    sortMagritte = sortMagritte.join("");
-    return sortMagritte
-  } else {
+    return str.split('').sort().join('');
+  }
+  else{
     return null;
   }
-}
-
-console.log(alphaOrder(magritte));
+};
 
  /** Function: vowelCount
  * The function will take the str parameter being passed in and
@@ -54,27 +40,23 @@ console.log(alphaOrder(magritte));
  * ie: "oreo" => 3
  */
 
-var ehrmann = "amid the noise and haste";
-
-function vowelCount(str){
+ var vowelCount = function(str){
   var total = 0;
-  var vowelArr = ["a", "e", "i", "o", "u"];
-  if(typeof str !== "string"){//if not a string return null
+  var vowels = ['a', 'e', 'i', 'o', 'u'];
+  if(typeof str !== "string"){
     return null;
-  } else {
-    for(var i = 0; i < vowelArr.length; i++){//iterates through variable
-      for(var j = 0; j < str.length; j++){ //splits string into indiv letters
-        //console.log(str[j]);
-        if(str[j] === vowelArr[i]){ //searches through ehrmann variable for a,e,i,o,u
-          total++; //counts the vowels
+  }
+  else {
+    for(var i = 0; i < vowels.length; i++){
+      for(var j = 0; j < str.length; j++){
+        if(str[j] === vowels[i]){
+          total++;
         }
       }
     }
-  return total; //returns total
+  return total;
   }
-}
-
-console.log(vowelCount(ehrmann));
+ };
 
  /** Function: timeConvert
  * The function will take the str parameter representing the amount of minutes being passed in and
@@ -85,17 +67,16 @@ console.log(vowelCount(ehrmann));
  * ie: 68 => 1:8
  */
 
- function timeConvert(str){
-  if(typeof str === "number"){
-    var hours = Math.floor(str/60);
-    var mins = str % 60;
+ var timeConvert = function(num){
+  if(typeof num === "number"){
+    var hours = Math.floor(num / 60);
+    var mins = num % 60;
     return hours + ":" + mins;
-  } else{
+  }
+  else{
     return null;
   }
  }
-
- console.log(timeConvert(456));
 
  /** Function: repeatString
  * The function will take in two parameters and repeat a given string (first argument)
@@ -106,28 +87,25 @@ console.log(vowelCount(ehrmann));
  * i.e repeatString("money", 3) => "moneymoneymoney".
  */
 
-
-function repeatString(str, num){
-  if((typeof str === "string") && (typeof num === "number")){
-    var repeatStr = "";
-    if(num >= 0){
-      for(var i = 0; i < num; i++){
-        repeatStr = repeatStr.concat(str);
-      }
-    }
-    return repeatStr;
-  } else {
+ var repeatString = function(str, num){
+  var repeatStr = "";
+  if(typeof str !== 'string' || typeof num !== 'number'){
     return null;
   }
-}
-console.log(repeatString("haha", 4));
+  else {
+    for(var i = 0; i < num; i++){
+      repeatStr = repeatStr.concat(str);
+    }
+  }
+  return repeatStr;
+ };
 
 
 /**
  * Below here we see a module.exports which is set to an object with a bunch of keys.
  * The module.exports syntax is a built-in javascript keyword that
- * allows functionality from this file to be used in other files.  
- * Here we are exporting an object with a bunch of keys that will reference 
+ * allows functionality from this file to be used in other files.
+ * Here we are exporting an object with a bunch of keys that will reference
  * the functions you have made. After you are done implementing a function,
  * change the 'null' to reference the corresponding function you have just created.
  * Then go into your terminal and run 'npm test' to see if the tests pass for your function.
@@ -143,4 +121,4 @@ module.exports = {
     vowelCount: vowelCount,
     timeConvert: timeConvert,
     repeatString: repeatString
-}
+};
